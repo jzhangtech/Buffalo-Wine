@@ -3,12 +3,30 @@ Session.setDefault("type","all")
 Session.setDefault("wineid","default")
 Session.setDefault("page", 0)
 
+
+
 Template.home.events({
   'click .imagelink': function() {
     Session.set("wineid",this._id);
+  },
+  'click .previous-page':function(){
+    var page=Session.get("page")-1;
+     Session.set("page", page);
+  },
+  'click .next-page':function(){
+    var page=Session.get("page")+1;
+     Session.set("page", page);
+   }
+});
+Template.home.helpers({
+  'hasPrevious':function(){
+    var previous=true;
+    if(Session.get("page")==0){
+      previous=false;
+    }
+    return previous;
   }
 });
-
 Template.home.helpers({
   'getimage': function() {
     var wineId = Session.get("wineid");
@@ -31,7 +49,9 @@ Template.home.helpers({
   'page':function(){
     var category=Session.get("region");
     var type=Session.get("type");
-    var count;
+
+
+    
     if(category=="all"&&type=="all"){
       count = Items.find({}).count();
     }
@@ -49,7 +69,7 @@ Template.home.helpers({
         count = Items.find({type:type}).count();
       }
     }
-    var counter=count/9;
+    counter=count/9;
     var pageArray=[];
     for (var i = 0; i<counter; i++) {
       pageNum=i+1;
@@ -64,6 +84,7 @@ Template.home.helpers({
       var category=Session.get("region");
       var type=Session.get("type");
       var page=Session.get("page")*9;
+      var item;
 
 		  
       if(category=="all"&&type=="all"){
@@ -83,8 +104,25 @@ Template.home.helpers({
             return Items.find({type:type},{limit:9,skip:page});
           }
         }
-      } 
+      }
     });
+
+Template.home.helpers({
+  'hasNext':function(){
+    var next=true;
+    if(Session.get("page")+1 > counter || counter==null || counter=='undefine'){
+      next=false;
+    }
+    return next;
+  },
+  'active':function(){
+    if(this.num==Session.get('page')+1){
+      return true;
+    }else{
+      return false;
+    }
+  }
+});
 Template.home.events({
   'click .typeall': function() {
   Session.set("type","all")

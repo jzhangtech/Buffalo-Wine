@@ -51,7 +51,7 @@
         </td></tr>
      
         <div class="content">
-          <tr><td class="center" style="margin-bottom:5px;"><strong style="color:#984814;">{{name}}</strong></td></tr>
+          <tr><td class="center" style="margin-bottom:5px;"><div style="color:#984814;">{{name}}</div></td></tr>
 			    <tr><td><strong>Description : </strong>{{description}}</td></tr>
           <tr><td><strong>Type : </strong>{{type}}</td></tr>
 			    <tr><td><strong>Alchohol : </strong>{{level}}</td></tr>
@@ -61,11 +61,20 @@
       </table> 
       {{/each}}
       <div class="col-xs-12">
-        <span>
+        <span class="center">
+          {{#if hasPrevious}}
+            <a class="previous-page">previous</a>
+          {{/if}}
           {{#each page}}
-            <a class="page-number" id="{{num}}">{{num}}</a>
+            {{#if active}}
+              <a class="page-number" style="font-size:2em;" id="{{num}}">{{num}}</a>
+            {{else}}
+              <a class="page-number" id="{{num}}">{{num}}</a>
+            {{/if}}
           {{/each}}
-          <a class="next-page">next</a>
+          {{#if hasNext}}
+            <a class="next-page">next</a>
+          {{/if}}
         </span>
       </div>
     </div>
