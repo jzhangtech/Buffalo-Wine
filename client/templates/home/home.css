@@ -1,6 +1,9 @@
 a,.fa{
 	cursor:pointer;
 }
+.image-height{
+	height:160px;
+}
 .filter-container{
   float:left;
   clear:both;
@@ -29,7 +32,7 @@ h6{
 .wineitem{
 	margin:10px 20px 0px 20px;
 	border-bottom:dashed 1px #984814;
-	height:375px;
+	height:390px;
 	padding:15px;
 	font-size: 13px;
 }

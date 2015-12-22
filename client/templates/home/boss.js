@@ -4,10 +4,7 @@ Session.setDefault("type","all")
 Template.bossPage.helpers({
   'boss':function(){
     var boss=true;
-    var userId=Meteor.user()._id;
-    //if(userId=="s48jMSDfxMh2xc5Bz"||userId=="AhhhSSqNSH8L6w7cF"){
-     // boss=true;
-  // }
+  
     return boss;
   }
 })
@@ -20,13 +17,13 @@ Template.bossPage.helpers({
           return Items.find({});
           }
       else if(category=="China"||category=="Japan"||category=="Korea"||category=="America"){
-           if(type=="Hot Liquor"||type=="Sake"||type=="Soju"||type=="Wine"){
+           if(type=="Hard Liquor"||type=="Sake"||type=="Soju"||type=="Wine"){
             return Items.find({region:category,type:type});
           }else{
             return Items.find({region:category});
           }
         }
-      else if(type=="Hot Liquor"||type=="Sake"||type=="Soju"||type=="Wine"){
+      else if(type=="Hard Liquor"||type=="Sake"||type=="Soju"||type=="Wine"){
            if(category=="China"||category=="Japan"||category=="Korea"||category=="America"){
             return Items.find({region:category,type:type});
           }else{
@@ -52,7 +49,7 @@ Template.bossPage.events({
   Session.set("type","all")
   document.getElementById("Sake").checked=false;
   document.getElementById("Soju").checked=false;
-  document.getElementById("hotLiquor").checked=false;
+  document.getElementById("HardLiquor").checked=false;
   document.getElementById("Wine").checked=false;
   
   },
@@ -72,7 +69,7 @@ Template.bossPage.events({
     document.getElementById("America").checked=false;
     document.getElementById("Sake").checked=false;
     document.getElementById("Soju").checked=false;
-    document.getElementById("hotLiquor").checked=false;
+    document.getElementById("HardLiquor").checked=false;
     document.getElementById("Wine").checked=false;
   }
 });
@@ -81,8 +78,8 @@ Template.bossPage.events({
   'click #China': function() {
     Session.set("region","China") 
   },
-  'click #hotLiquor': function() {
-    Session.set("type","Hot Liquor") 
+  'click #HardLiquor': function() {
+    Session.set("type","Hard Liquor") 
    }
 });
 Template.bossPage.events({
