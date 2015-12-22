@@ -1,0 +1,46 @@
+<template name="dashboard">
+  <div class="template-dashboard col-md-12">
+     <h1 class="page-header" style="color: #984814;">Come Visit Us!</h1>
+    <table class="addresstable col-md-5 " style="text-align:left;">
+    
+      <tr><td>
+      <strong>Address : </strong><span style="font-weight:; text-transform:uppercase;">
+      <a target="_blank" href="https://www.google.com/maps/place/3173+Sheridan+Dr,+Buffalo,+NY+14226/@42.979338,-78.8177037,17z/data=!3m1!4b1!4m2!3m1!1s0x89d3725df821b1bb:0x5babe4fc9346a7f2">3173 SHERIDAN DR.
+       <i class="fa fa-map-marker"></i></a>
+   
+
+    </span>
+      </td></tr>
+      <tr><td>
+      <strong>City : </strong><span style="font-weight:; text-transform:uppercase;">Amherst</span>
+      </td></tr>
+      <tr><td>
+      <strong>State : </strong><span style="font-weight:; text-transform:uppercase;">New York</span>
+      </td></tr>
+      <tr><td>
+      <strong>Zipcode : </strong><span style="font-weight:; text-transform:uppercase;">14226</span>
+      </td></tr>
+      <tr><td>
+      <strong>Phone : </strong><span style="font-weight:; text-transform:uppercase;">716-831-7871</span>
+      </td></tr>
+      <tr><td>
+      <strong>Hours : </strong>
+      <span style="font-weight:; text-transform:uppercase;">Monday - Saturday : 10PM - 8pm</span>
+      </td></tr>
+      <tr><td>
+        <strong style="visibility:hidden">Hours : </strong>
+        <span style="font-weight:; text-transform:uppercase;">Sunday : Noon - 7PM</span>
+      </td></tr>
+
+    
+    </table>
+    <div class="col-md-6" >
+      <div class="col-md-12 center map-container">
+      {{> googleMap name="exampleMap" options=exampleMapOptions}}
+      </div>
+    </div>
+
+  
+
+  </div>
+</template>

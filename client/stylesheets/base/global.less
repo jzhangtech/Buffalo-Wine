@@ -1,0 +1,34 @@
+@components: '../components';
+// Bootstrap
+@import "./lib/bootstrap/bootstrap.import.less";
+
+// Font Awesome
+@import "./lib/font-awesome/font-awesome.import.less";
+
+@import './mixins.import.less';
+@import './variables.import.less';
+
+// Misc Global Styles
+@import './type.import.less';
+
+// Components
+@import '@{components}/loading.import.less';
+@import '@{components}/buttons.import.less';
+
+*{
+	margin:0px;
+	padding:0px;
+	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+ol,ul{
+	 list-style-type: none;
+}
+h1,h2,h3,h4,h5,h6,.bold{
+	font-weight: bold;
+}
+
+.map-container {
+  width: 600px;
+  max-width: 100%;
+  height: 400px;
+}

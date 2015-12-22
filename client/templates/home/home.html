@@ -1,0 +1,84 @@
+<template name="home">
+  <div class="template-home" style="min-width:1200px;">
+  	<!--banner-->
+    <div style= "padding-bottom:20px;">
+  	 <img src="banner/banner1.png" width="80%" height="125px" class="center">
+    </div>
+  	
+    <table class="col-xs-2 filter-container">
+     	<tr class="filter categories"><td>
+        <h6>Filter:&nbsp;<a id="filterall">Clear all</a></h6>
+      </td></tr>
+      <tr class="filter categories"><td>
+        Region:&nbsp;<a class="regionall">All</a> 
+      </td></tr>
+      <tr><td>
+        <input type="radio" name="regionselection" value="China" id="China"/> China
+      </td></tr>
+      <tr><td> 	
+        <input type="radio" name="regionselection" value="Japan" id="Japan"/> Japan   
+      </td></tr>
+      <tr><td>  	 
+        <input type="radio" name="regionselection" value="America" id="America"/> America
+      </td></tr>
+      <tr><td>  	
+        <input type="radio" name="regionselection" value="Korea" id="Korea"/> Korea
+      </td></tr>
+      <tr><td>   
+        Type:&nbsp;<a class="typeall">All</a>
+      </td></tr> 
+      <tr><td>  
+        <input type="radio" name="typeselection" id="Sake"/> Sake
+      </td></tr>
+      <tr><td>  
+        <input type="radio" name="typeselection" id="Wine"/> Wine 
+      </td></tr>
+      <tr><td>  
+        <input type="radio" name="typeselection" id="HardLiquor"/>Hard Liquor
+      </td></tr>
+      <tr style="margin-bottom:10px;"><td>  
+        <input type="radio" name="typeselection" id="Soju"/> Soju
+      </td></tr>
+    </table> 
+    
+    <div class="col-xs-10 wineselection">
+      <h3 style="color:#984814;">BROWSE OUR SELECTIONS:</h3>
+      {{#each wine}}
+      <table class="wineitem col-xs-3"> 
+        <tr><td>
+          <img class="center" src="wineimages/{{this.img}}" style="height:120px;"/>
+           <a class="center imagelink" data-toggle="modal" data-target="#myModal">image</a>
+        </td></tr>
+     
+        <div class="content">
+          <tr><td class="center"><strong style="color:#984814;">{{name}}</strong></td></tr>
+			    <tr><td><strong>Description : </strong>{{description}}</td></tr>
+          <tr><td><strong>Type : </strong>{{type}}</td></tr>
+			    <tr><td><strong>Alchohol : </strong>{{level}}</td></tr>
+			    <tr><td><strong>Size : </strong>{{size}}</td></tr>
+          <tr><td><strong>Food/Serving Suggestion : </strong>{{pair}}</td></tr>
+        </div>
+      </table> 
+      {{/each}}
+    </div>
+  </div>
+
+  <!-- Modal -->
+   <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <button type="button" class="close" data-dismiss="modal">&times;
+              </button>
+                <div class="modal-body">
+                  <img class="center" src="wineimages/{{getimage}}"/>
+                </div>
+              </div>
+            </div>
+           </div>
+
+</template>
+
+
+
+
+

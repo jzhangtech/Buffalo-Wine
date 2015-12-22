@@ -1,0 +1,51 @@
+a,.fa{
+	cursor:pointer;
+}
+.filter-container{
+  float:left;
+  clear:both;
+  text-align:left;
+  border:dashed 1px #984814;
+  width:12%;
+
+}
+.filter-container tr{
+	display:block;
+	padding: 5px 2px 2px 10px;
+}
+strong{
+	color:#4B2105;
+	text-transform: uppercase;
+}
+
+
+
+h6{
+	text-align: center;
+}
+.wineselection{
+	padding-left: 75px
+}
+.wineitem{
+	margin:10px 20px 0px 20px;
+	border-bottom:dashed 1px #984814;
+	height:375px;
+	padding:15px;
+	font-size: 13px;
+}
+.wineitem td{
+	padding:3px 0;
+}
+.center{
+	display:table;
+	margin:0 auto;
+}
+.content{
+	margin-bottom:10px;
+	
+}
+.modalbtn{
+	position: absolute;
+	bottom:65px;
+	padding-left: 10px;
+}

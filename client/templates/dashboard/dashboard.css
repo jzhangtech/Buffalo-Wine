@@ -1,0 +1,13 @@
+.addresstable tr td{
+	margin: 10px;
+	padding: 5px;
+
+}
+.addresstable {
+	margin:20px;
+}
+.logo{
+	background-image: url("banner/edit2.png");
+	background-repeat: round;
+	width:11em;
+}
